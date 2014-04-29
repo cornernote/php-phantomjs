@@ -50,9 +50,9 @@ class Request implements RequestInterface
     /**
      * Internal constructor
      *
-     * @param  string $method
+     * @param string $method
      * @param  string $url
-     * @return void
+     * @return \JonnyW\PhantomJs\Message\Request
      */
     public function __construct($method = RequestInterface::METHOD_GET, $url = null)
     {
@@ -69,7 +69,8 @@ class Request implements RequestInterface
     /**
      * Set request method
      *
-     * @param  string                            $method
+     * @param  string $method
+     * @throws \JonnyW\PhantomJs\Exception\InvalidMethodException
      * @return \JonnyW\PhantomJs\Message\Request
      */
     public function setMethod($method)
@@ -100,7 +101,8 @@ class Request implements RequestInterface
     /**
      * Set request URL
      *
-     * @param  string                            $url
+     * @param  string $url
+     * @throws \JonnyW\PhantomJs\Exception\InvalidUrlException
      * @return \JonnyW\PhantomJs\Message\Request
      */
     public function setUrl($url)
